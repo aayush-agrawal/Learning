@@ -63,8 +63,10 @@ git diff --staged
 #revert unstaged changes
 git checkout filename
 git checkout  .
+git restore .
 
 # revert staged changes
+git restore --staged ..
 git reset HEAD
 git reset HEAD filename
 git reset HEAD -p

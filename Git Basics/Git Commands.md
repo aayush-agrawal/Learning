@@ -15,6 +15,7 @@ git config --global user.email "agrawal.aayushn91@gmail.com"
 ```
 # initialize the git repository
 git init
+
 # retrieve an entire repository from a hosted location via URL
 git clone url
 ```
@@ -23,14 +24,19 @@ git clone url
 ```
 # add a file to the staging area
 git add filename
+
 # add all file to the staging area
 git add .
+
 # see the changes and add to the staging area
 git add -p
+
 # add only certain  files to the staging area
 git add filena*
+
 # commit changes
 git commit -m "message"
+
 # add track files to staging area and commit changes
 get commit -am "message"
 ```
@@ -39,10 +45,13 @@ get commit -am "message"
 ```
 # check the commit history
 git log --oneline --graph
+
 # see the commit log of the remote repository
 git log alias/branchname
+
 # see a specific commit
 git show commit_id
+
 # see changes made before committing them
 git diff
 git diff filename
@@ -54,17 +63,22 @@ git diff --staged
 #revert unstaged changes
 git checkout filename
 git checkout  .
+
 # revert staged changes
 git reset HEAD
 git reset HEAD filename
 git reset HEAD -p
+
 # undo the last local commit
 git reset --soft HEAD~1
 git reset HEAD~1
+
 # rollback the last commit
 git revert HEAD
+
 # rollback the specific commit
 git revert commit-id
+
 # amend the most recent commit
 git commit --amend
 ```
@@ -73,18 +87,25 @@ git commit --amend
 ```
 # create a branch
 git branch branchname
+
 # switch to a branch
 git checkout branchname
+
 # create and switch to a branch
 git checkout -b branchname
+
 # list branches
 git branch
+
 # list remote branches
 git branch -r
+
 # delete a branch
 git branch -d branchname
+
 # merge a branch
 git merge remote/branchname
+
 # abort the merge
 git merge --abort
 ```
@@ -94,24 +115,32 @@ git merge --abort
 # save modified and staged changes
 git stash
 git stash save "message"
+
 # apply changes from the stash stack
 git stash pop
 git stash apply 0
+
 # see the stash stack
 git stash list
+
 # discard the changes from top of the stash stack 
+git stash drop
 ```
 
 ### _SHARE & UPDATE_
 ```
 # add a remote repository
 git remote add  alias URL
+
 # see all remote repositories
 git remote -v
+
 # pull changes from remote repository & merge with local changes as seperate commit
 git pull 
+
 # apply unpublished changes from the local with the published changes from remote
 git pull --rebase
+
 # push the changes to remote repository
 git push alias branchname
 git push alias branch --set-upstream

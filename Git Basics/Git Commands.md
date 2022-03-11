@@ -1,68 +1,119 @@
 
 # Git Commands
 
-#### _How to check your git configuration:_
-```git config --list```
+#### _CONFIGURATION_
+```
+# check your git configuration
+git config --list
 
-#### _How to setup your git username and email:_
-```git config --global user.name "Aayush Agrawal"```
-```git config --global user.email "agrawal.aayushn91@gmail.com"```
+# setup your git username and email
+git config --global user.name "Aayush Agrawal"
+git config --global user.email "agrawal.aayushn91@gmail.com"
+```
 
-#### _How to initialize a git repo:_
-```git init```
+#### _SETUP & INIT_
+```
+# initialize the git repository
+git init
+# retrieve an entire repository from a hosted location via URL
+git clone url
+```
 
-#### _How to add a file to the staging area:_
-``` git add filename```
-
-#### _How to add all file to the staging area:_
-``` git add .```
-
-#### _How to see the changes_
-```git add -p```
-
-#### _How to add only certain  files to the staging area:_
-```git add filena*```
-
-#### _How to commit changes:_
-```git commit -m "message"```
-
-#### _How to add track files to staging area and commit changes:_
-```get commit -am "message"```
-
-#### _How to see the commit history:_
-```git log --oneline --graph```
-
-#### _How to see a specific commit:_
-```git show commit_id```
-
-#### _How to see changes made before committing them:_
-```git diff```
-```git diff filename```
-```git diff --staged```
-
-
-
-
-git stash
-git stash pop
-git stash save "message"
-git stash list
-git stash apply 0
-
-
-git status
+#### _STAGE & COMMIT_
+```
+# add a file to the staging area
+git add filename
+# add all file to the staging area
 git add .
-git commit -m "message"
-git commit -am "message"
-git add file
+# see the changes and add to the staging area
 git add -p
+# add only certain  files to the staging area
+git add filena*
+# commit changes
+git commit -m "message"
+# add track files to staging area and commit changes
+get commit -am "message"
+```
 
-git push
-git push remote branch
-git push remote branch --set-upstream
+#### _HISTORY, LOGS & DIFF_
+```
+# check the commit history
+git log --oneline --graph
+# see the commit log of the remote repository
+git log alias/branchname
+# see a specific commit
+git show commit_id
+# see changes made before committing them
+git diff
+git diff filename
+git diff --staged
+```
 
-git resest --soft HEAD~1
-git commit --amend -m "message"
-git revert hash
+#### _UNDO_
+```
+#revert unstaged changes
+git checkout filename
+git checkout  .
+# revert staged changes
+git reset HEAD
+git reset HEAD filename
+git reset HEAD -p
+# undo the last local commit
+git reset --soft HEAD~1
+git reset HEAD~1
+# rollback the last commit
+git revert HEAD
+# rollback the specific commit
+git revert commit-id
+# amend the most recent commit
+git commit --amend
+```
 
-git log --graph --oneline
+#### _BRANCHING & MERGING_
+```
+# create a branch
+git branch branchname
+# switch to a branch
+git checkout branchname
+# create and switch to a branch
+git checkout -b branchname
+# list branches
+git branch
+# list remote branches
+git branch -r
+# delete a branch
+git branch -d branchname
+# merge a branch
+git merge remote/branchname
+# abort the merge
+git merge --abort
+```
+
+#### _TEMPORARY COMMITS_
+```
+# save modified and staged changes
+git stash
+git stash save "message"
+# apply changes from the stash stack
+git stash pop
+git stash apply 0
+# see the stash stack
+git stash list
+# discard the changes from top of the stash stack 
+```
+
+### _SHARE & UPDATE_
+```
+# add a remote repository
+git remote add  alias URL
+# see all remote repositories
+git remote -v
+# pull changes from remote repository & merge with local changes as seperate commit
+git pull 
+# apply unpublished changes from the local with the published changes from remote
+git pull --rebase
+# push the changes to remote repository
+git push alias branchname
+git push alias branch --set-upstream
+```
+

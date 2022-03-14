@@ -67,6 +67,7 @@ git restore .
 
 # revert staged changes
 git restore --staged ..
+git restore -S ..
 git reset HEAD
 git reset HEAD filename
 git reset HEAD -p
@@ -129,7 +130,7 @@ git stash list
 git stash drop
 ```
 
-### _SHARE & UPDATE_
+#### _SHARE & UPDATE_
 ```
 # add a remote repository
 git remote add  alias URL
@@ -148,3 +149,13 @@ git push alias branchname
 git push alias branch --set-upstream
 ```
 
+#### _CLEAN_
+```
+# dry run
+git clean -n
+
+# directories
+git clean -d
+
+# force
+git clean -f
